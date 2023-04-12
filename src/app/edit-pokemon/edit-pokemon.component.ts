@@ -6,8 +6,7 @@ import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-edit-pokemon',
-  templateUrl: './edit-pokemon.component.html',
-  styleUrls: ['./edit-pokemon.component.css']
+  templateUrl: './edit-pokemon.component.html'
 })
 export class EditPokemonComponent {
   pokemons !: Pokemon[];
@@ -31,9 +30,4 @@ export class EditPokemonComponent {
     this.router.navigate(['pokemon/all'])
   }
 
-  edit(){
-    console.log(this.pokemon.id);
-        let link = ['/edit', this.pokemon.id];
-        this.router.navigate(link);
-  }
 }

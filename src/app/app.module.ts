@@ -9,6 +9,8 @@ import { PokemonTypeColorPipe } from './pipes/pokemon-type-color';
 import { BorderCardDirective } from './directive/border-card.directive';
 import { DetailPokemonsProjectComponent } from './pokemon/detail-pokemons.project/detail-pokemons.project.component';
 import { EditPokemonComponent } from './edit-pokemon/edit-pokemon.component';
+import { FormsModule } from '@angular/forms';
+import { FormPokemonComponent } from './edit-pokemon/form-pokemon.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,9 +20,11 @@ import { EditPokemonComponent } from './edit-pokemon/edit-pokemon.component';
     BorderCardDirective,
     DetailPokemonsProjectComponent,
     EditPokemonComponent,
+    FormPokemonComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],

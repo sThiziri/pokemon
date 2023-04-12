@@ -30,7 +30,8 @@ export class DetailPokemonsProjectComponent {
     this.router.navigate(['pokemon/all'])
   }
 
-  edit(){
-    this.router.navigate(['edit/:id'])
+  goEdit(pokemon: Pokemon):void{
+    let link = ['pokemon/edit',pokemon.id];
+    this.router.navigate(link)
   }
 }
