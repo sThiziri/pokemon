@@ -8,6 +8,9 @@ import { PokemonService } from './pokemons.service';
 import { CommonModule } from '@angular/common';
 import { BorderCardDirective } from './directive/border-card.directive';
 import { PokemonTypeColorPipe } from './pipes/pokemon-type-color';
+
+import { PokemonRoutingModule } from './pokemons-routing.module';
+
 @NgModule({
   declarations: [
     PokemonsComponent,
@@ -19,7 +22,8 @@ import { PokemonTypeColorPipe } from './pipes/pokemon-type-color';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    PokemonRoutingModule
   ],
   providers: [
     PokemonService
