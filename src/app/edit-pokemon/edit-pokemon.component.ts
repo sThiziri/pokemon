@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Pokemon } from 'src/app/pokemons/donnees-pokemons/pokemon';
 import { POKEMONS } from 'src/app/pokemons/donnees-pokemons/mock-pokemon';
 import {Router, ActivatedRoute} from '@angular/router';
+import { PokemonService } from '../pokemons/pokemons.service';
 
 @Component({
   selector: 'app-edit-pokemon',
@@ -12,7 +13,7 @@ export class EditPokemonComponent {
   pokemons !: Pokemon[];
   pokemon: any = null;
 
-  constructor(private route: ActivatedRoute, private router: Router){ }
+  constructor(private route: ActivatedRoute, private router: Router, private PokemonService: PokemonService){ }
 
   ngOnInit(): void{
     this.pokemons = POKEMONS

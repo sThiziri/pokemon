@@ -1,6 +1,7 @@
 import {Component, OnInit, Input} from "@angular/core";
 
 import { ActivatedRoute, Router } from "@angular/router";
+import { PokemonService } from "../pokemons/pokemons.service";
 
 @Component({
     selector: 'form-pokemon',
@@ -12,7 +13,7 @@ export class FormPokemonComponent implements OnInit{
 
     type: any= [];
 
-    constructor(private router: Router){}
+    constructor(private router: Router, private pokemonService: PokemonService){}
 
     ngOnInit(): void {
         this.type = this.getPokemonTypes();
@@ -60,4 +61,14 @@ export class FormPokemonComponent implements OnInit{
         }
             return true;
     }
+
+    onSubmit():void {
+        let link = ['/pokemon', this.pokemon.id]
+        this.router.navigate(link)
+    }
+
+    goBack(){
+        this.router.navigate(['/pokemon', this.pokemon.id])
+      }
+    
 }

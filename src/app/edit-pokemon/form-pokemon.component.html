@@ -1,4 +1,4 @@
-<form #pokemonForm="ngForm">
+<form #pokemonForm="ngForm" (ngSubmit)="onSubmit()">
 <!--Librairie ng form-->
     <div class="row">
         <div class="col s8 offset-s2">
@@ -55,6 +55,18 @@
                     </p>
                 </form>
 
+                <!--Submit button-->
+                <div class="divider"></div>
+
+                <div class="section center">
+                    <button type="submit" class="waves-effect waves-light btn"
+                    [disabled]="!pokemonForm.form.valid" 
+                    >Valider</button>
+                    <a class="waves-effect waves-light btn" (click)="goBack()">Retour</a>
+                    <a class="waves-effect waves-light btn" (click)="goBack()">Supprimer</a>
+                </div>
+
+                
             </div>
         </div>
     </div>

@@ -3,27 +3,20 @@ import { Component } from '@angular/core';
 import { Pokemon } from 'src/app/pokemons/donnees-pokemons/pokemon';
 import { POKEMONS } from 'src/app/pokemons/donnees-pokemons/mock-pokemon';
 import {Router, ActivatedRoute} from '@angular/router';
-
+import { PokemonService } from 'src/app/pokemons/pokemons.service';
 @Component({
   selector: 'app-detail-pokemons.project',
   templateUrl: './detail-pokemons.project.component.html',
   styleUrls: ['./detail-pokemons.project.component.css']
 })
 export class DetailPokemonsProjectComponent {
-  pokemons !: Pokemon[];
   pokemon: any = null;
 
-  constructor(private route: ActivatedRoute, private router: Router){ }
+  constructor(private route: ActivatedRoute, private router: Router, private pokemonService: PokemonService){ }
 
   ngOnInit(): void{
-    this.pokemons = POKEMONS
     let idUrl= this.route.snapshot.params['id']
-
-    for(let i=0; i< this.pokemons.length; i++){
-      if (this.pokemons[i].id == idUrl){
-        this.pokemon = this.pokemons[i];
-      }
-    }
+    this.pokemon = this.pokemonService.getPokemon(idUrl)  
   }
 
   goBack(){
