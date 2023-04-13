@@ -16,7 +16,9 @@ export class DetailPokemonsProjectComponent {
 
   ngOnInit(): void{
     let idUrl= this.route.snapshot.params['id']
-    this.pokemon = this.pokemonService.getPokemon(idUrl)  
+    this.pokemon = this.pokemonService.getPokemon(idUrl).subscribe( 
+    pokemon => this.pokemon = pokemon 
+    )
   }
 
   goBack(){
