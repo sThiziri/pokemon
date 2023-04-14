@@ -1,7 +1,11 @@
 <h2 class="header center">Editer {{ pokemon.name }}</h2>
 <p class="center">
-  <img [src]="pokemon.picture" *ngIf="pokemon" >
+  <img [src]="pokemon.picture" *ngIf="pokemon">
 </p>
+<div class="section center">
+  <button  class="waves-effect waves-light btn"
+  >Modifier image</button>
+</div>
 
 <form-pokemon [pokemon]="pokemon">
 
