@@ -1,19 +1,26 @@
-export class Pokemon{
+export class Pokemon {
     id !:number;
     hp !:number;
     cp !:number;
     name !:string;
     picture !:string;
+    rarity !:string;
     types !:Array<string>;
-    created !: Date;
+    created !:Date;
 
-    constructor(){
-        this.id=0;
-        this.hp=0;
-        this.cp=0;
-        this.name='noName';
-        this.picture='https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png';
-        this.types=['plante'];
-        this.created=new Date();
+    constructor(name: string = 'Entrer un nom...',
+                hp: number = 100,
+                cp: number = 10,
+                picture: string = 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/xxx.png',
+                rarity: string = "*",
+                types: string[] = ['Normal'],
+                created: Date = new Date()) {
+      this.name = name;
+      this.hp = hp;
+      this.cp = cp;
+      this.picture = picture;
+      this.rarity = rarity;
+      this.types = types;
+      this.created = created;
     }
 }
